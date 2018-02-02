@@ -33,3 +33,4 @@
 
 *.swo
 *.swp
+build*
