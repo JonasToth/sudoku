@@ -4,27 +4,28 @@ os: linux
 matrix:
   # GCC
   include:
-      env: C_COMPILER=gcc-5 CXX_COMPILER=g++-5
-      apt:
-        sources:
-         - ubuntu-toolchain-r-test
-        packages:
-         - g++-5
+    env: C_COMPILER=gcc-5 CXX_COMPILER=g++-5
+    apt:
+      sources:
+       - ubuntu-toolchain-r-test
+      packages:
+       - g++-5
 
-      apt:
-        sources:
-         - ubuntu-toolchain-r-test
-        packages:
-         - g++-6
-      env: C_COMPILER=gcc-6 CXX_COMPILER=g++-6
+    apt:
+      sources:
+       - ubuntu-toolchain-r-test
+      packages:
+       - g++-6
+    env: C_COMPILER=gcc-6 CXX_COMPILER=g++-6
 
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-          - llvm-toolchain-trusty-5.0
-        packages:
-          - clang-5.0
-      env: C_COMPILER=clang-5.0 CXX_COMPILER=clang++-5.0
+    #apt:
+    #sources:
+    #- ubuntu-toolchain-r-test
+    #- llvm-toolchain-trusty-5.0
+    #packages:
+    #- clang-5.0
+    #- clang++-5.0
+    #env: C_COMPILER=clang-5.0 CXX_COMPILER=clang++-5.0
 
 install:
     - export CC=${C_COMPILER}
