@@ -4,6 +4,7 @@ matrix:
   # GCC
   include:
     - os: linux
+      language: cpp
       addons:
       apt:
         sources:
@@ -13,6 +14,7 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
     - os: linux
+      language: cpp
       addons:
       apt:
         sources:
@@ -22,6 +24,7 @@ matrix:
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
     - os: linux
+      language: cpp
       addons:
       apt:
         sources:
@@ -33,6 +36,7 @@ matrix:
 
 	# CLANG
 	- os: linux
+      language: cpp
       addons:
         apt:
           sources:
@@ -44,6 +48,7 @@ matrix:
 
     # works on Trusty
     - os: linux
+      language: cpp
       addons:
         apt:
           sources:
@@ -55,6 +60,7 @@ matrix:
 
     # works on Trusty
     - os: linux
+      language: cpp
       addons:
         apt:
           sources:
@@ -63,8 +69,6 @@ matrix:
             - clang-5.0
       env:
         - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
-
-
 
 before_install:
   - eval "${MATRIX_EVAL}"
