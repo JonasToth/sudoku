@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JonasToth/sudoku.svg?branch=master)](https://travis-ci.org/JonasToth/sudoku)
+
 # Sudoku
 
 Solving sudokus is fun and a good practice for your brain. Its good implement

@@ -28,6 +28,24 @@ matrix:
           packages:
            - g++-7
 
+    - env: C_COMPILER=clang-3.9 CXX_COMPILER=clang++-3.9
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-3.9
+          packages:
+            - clang-3.9
+
+    - env: C_COMPILER=clang-4.0 CXX_COMPILER=clang++-4.0
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-4.0
+          packages:
+            - clang-4.0
+
     - env: C_COMPILER=clang-5.0 CXX_COMPILER=clang++-5.0
       addons:
         apt:
