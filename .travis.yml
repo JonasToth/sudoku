@@ -1,81 +1,39 @@
 language: cpp
+os: linux
 
 matrix:
   # GCC
   include:
-    - os: linux
-      language: cpp
-      addons:
+      env: C_COMPILER=gcc-5 CXX_COMPILER=g++-5
       apt:
         sources:
          - ubuntu-toolchain-r-test
         packages:
          - g++-5
-      env:
-        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
-    - os: linux
-      language: cpp
-      addons:
+
       apt:
         sources:
          - ubuntu-toolchain-r-test
         packages:
          - g++-6
-      env:
-        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
-    - os: linux
-      language: cpp
-      addons:
+      env: C_COMPILER=gcc-6 CXX_COMPILER=g++-6
+
       apt:
         sources:
-         - ubuntu-toolchain-r-test
+          - ubuntu-toolchain-r-test
+          - llvm-toolchain-trusty-5.0
         packages:
-         - g++-7
-      env:
-        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+          - clang-5.0
+      env: C_COMPILER=clang-5.0 CXX_COMPILER=clang++-5.0
 
-	# CLANG
-	- os: linux
-      language: cpp
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-3.9
-          packages:
-            - clang-3.9
-      env:
-        - MATRIX_EVAL="CC=clang-3.9 && CXX=clang++-3.9"
+install:
+    - export CC=${C_COMPILER}
+    - export CXX=${CXX_COMPILER}
 
-    # works on Trusty
-    - os: linux
-      language: cpp
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-4.0
-          packages:
-            - clang-4.0
-      env:
-        - MATRIX_EVAL="CC=clang-4.0 && CXX=clang++-4.0"
-
-    # works on Trusty
-    - os: linux
-      language: cpp
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-trusty-5.0
-          packages:
-            - clang-5.0
-      env:
-        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
-
-before_install:
-  - eval "${MATRIX_EVAL}"
+before_script:
+  - mkdir build && cd build
+  - cmake .. -DCMAKE_BUILD_TYPE=MinSizeRel
 
 script:
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make -j2
-  - ctest -j2 .
+  - cmake --build . -- -j2
+  - ctest --output-on-failure -j2
