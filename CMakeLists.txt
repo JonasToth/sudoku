@@ -10,7 +10,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 option(WITH_TEST "build unit tests" ON)
 option(WITH_BENCHMARKS "build benchmarks" ON)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 # Source code for library and executables.
 add_subdirectory("src/")

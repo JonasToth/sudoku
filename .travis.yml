@@ -4,22 +4,6 @@ os: linux
 matrix:
   # GCC
   include:
-    - env: C_COMPILER=gcc-5 CXX_COMPILER=g++-5
-      addons:
-        apt:
-          sources:
-           - ubuntu-toolchain-r-test
-          packages:
-           - g++-5
-
-    - env: C_COMPILER=gcc-6 CXX_COMPILER=g++-6
-      addons:
-        apt:
-          sources:
-           - ubuntu-toolchain-r-test
-          packages:
-           - g++-6
-
     - env: C_COMPILER=gcc-7 CXX_COMPILER=g++-7
       addons:
         apt:
