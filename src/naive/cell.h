@@ -3,6 +3,7 @@
 
 #include <cstdint>
 
+namespace naive {
 /**
  * @brief One single cell of a sudoku representing the value and all possible 
  * values [1-9].
@@ -23,5 +24,7 @@ public:
 private:
     uint8_t __value = 0u; ///< Value of the field.
 };
+
+} /* naive */
 
 #endif /* end of include guard: CELL_H_ODI8ALJC */
