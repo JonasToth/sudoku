@@ -1,6 +1,8 @@
 #include "cell.h"
 #include <stdexcept>
 
+namespace naive {
+
 Cell::Cell(const uint8_t value)
 {
     if (value > 9u || value == 0u)
@@ -8,3 +10,5 @@ Cell::Cell(const uint8_t value)
 
     __value = value;
 }
+
+} /* naive */

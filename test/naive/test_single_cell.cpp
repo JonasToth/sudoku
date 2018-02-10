@@ -1,6 +1,8 @@
 #include "naive/cell.h"
 #include "gtest/gtest.h"
 
+using namespace naive;
+
 TEST(cell, default_construction)
 {
     Cell c;
