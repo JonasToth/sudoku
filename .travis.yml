@@ -28,21 +28,30 @@ matrix:
           packages:
            - g++-9
 
-    - env: C_COMPILER=clang-6 CXX_COMPILER=clang++-6
+    - env: C_COMPILER=clang-5.0 CXX_COMPILER=clang++-5.0
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-6
+            - llvm-toolchain-bionic-5.0
           packages:
-            - clang-6
+            - clang-5.0
+
+    - env: C_COMPILER=clang-6.0 CXX_COMPILER=clang++-6.0
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-bionic-6.0
+          packages:
+            - clang-6.0
 
     - env: C_COMPILER=clang-7 CXX_COMPILER=clang++-7
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-7
+            - llvm-toolchain-bionic-7
           packages:
             - clang-7
 
@@ -51,7 +60,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-8
+            - llvm-toolchain-bionic-8
           packages:
             - clang-8
 
@@ -60,7 +69,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-9
+            - llvm-toolchain-bionic-9
           packages:
             - clang-9
 
